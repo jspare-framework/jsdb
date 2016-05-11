@@ -1,0 +1,12 @@
+{
+	"dataSources": 
+	{
+		"datasource": 
+		{
+			"url": "jdbc:teste/teste",
+			"driver": "org.jspare.test.Driver",
+			"username": "user",
+			"password": "password"
+		}
+	}
+}
