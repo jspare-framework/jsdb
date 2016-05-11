@@ -1,0 +1,50 @@
+{
+	"name": "jsdb-admin",
+	"description": "JSDB Admin Application",
+	"version": "1.0.0",
+	"compileDate" : "19/01/2016",
+	"compileId" : "19012016-01",
+	"app-id": "JSDB-ADMIN",
+	"main": "app/index.html",
+	"window": 
+	{
+		"title": "JSDB Admin",
+		"icon": "app/assets/application/images/icon.png",
+		"toolbar": false,
+		"frame": true,
+		"width": 1024,
+		"height": 768,
+		"min_width": 780,
+    	"min_height": 540,
+		"position": "center",
+		"resizable" : true,
+		"visible-on-all-workspaces" : false,
+		"fullscren" : true
+	},
+	"author": "Techfull IT",
+	"homepage": "https://bitbucket.org/techfullit/",
+	"repository": 
+	{
+		"type": "git",
+		"url": "https://bitbucket.org/techfullit/tools"
+	},
+	"bugs": 
+	{
+		"url": "https://bitbucket.org/techfullit/tools/issues"
+	},
+	"keywords": 
+	[
+		"Tools"
+	],
+	"dependencies": 
+	{
+		"underscore": "=1.8.3",
+		"request": "2.65.0",
+		"mustache" : "2.2.1",
+		"nodeunit ": "0.9.1",
+		"mkdirp": "0.5.1",
+		"jsonfile" : "2.2.3",
+		"shelljs" : "0.5.3",
+		"soap" : "0.11.1"
+	}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="./../../assets/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="./../../assets/application/css/bundle.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+	const
+	Nw = {}, App = {}, Controllers = {};
+	
+	function setParent(win){
+		
+		parentWindow = win;
+	}
+	function onLoad(){
+		
+		Controllers.Settings.build();		
+	}
+</script>
+
+<meta charset="UTF-8">
+
+</head>
+
+<body style="display: none">
+
+	<form>
+		<div class="panel panel-default">
+			<div class="panel-heading">{{ i18n.title }}</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+
+				<!-- Nav tabs -->
+				<ul id="nav-settings-nav" class="nav nav-pills">
+				</ul>
+
+				<!-- Tab panes -->
+				<div id="nav-settings-content" class="tab-content"></div>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+
+		<div class="actions">
+
+			<button type="button" id="cmd_settings_ok" class="btn btn-default pull-right">{{ i18n.window.ok }}</button>
+			<button type="button" id="cmd_settings_apply" class="btn btn-primary pull-right">{{ i18n.window.apply }}</button>
+		</div>
+	</form>
+
+	<script src="./../../assets/jquery/jquery-1.11.3.min.js"></script>
+	<script src="./../../assets/bootstrap/bootstrap.min.js"></script>
+
+	<script src="./../../core/commons/commons.js"></script>
+	<script src="./../../core/controllers/settings.controller.js"></script>
+
+</body>
+</html>

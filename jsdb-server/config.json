@@ -1,0 +1,38 @@
+{
+	"name": "JSDB",
+	"logger": 
+	{
+		"debug": false,
+		"webpanel": true
+	},
+
+	"server": 
+	{
+		"port": 5732,
+		"security": 
+		{
+			"enable": false,
+			"privateKey": "",
+			"certificate": ""
+		},
+
+		"cluster": 
+		{
+			"enable": false,
+			"maxPersistFile": "5mb",
+			"maxAllocSize": "512mb"
+		}
+	},
+
+	"entitlements": 
+	{
+		"allowRoot": true
+	},
+
+	"persistance": 
+	{
+		"maxPersistSize": "512mb"
+	},
+
+	"monitoring": true
+}

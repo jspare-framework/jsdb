@@ -1,0 +1,37 @@
+{
+	"locale": "English (US)",
+	"title": "JSDB ADMIN",
+	"menu": 
+	{
+		"file": "File",
+		"exit": "Exit",
+		"help": "Help",
+		"docs": "Documentation",
+		"about": "About"
+	},
+
+	"window": 
+	{
+		"exit": "Exit from JSDB Admin?"
+	},
+
+	"sidebar": 
+	{
+		"instances": "Instances",
+		"monitoring": "Monitoring",
+		"backup": "Backup / Restore",
+		"config": "Settings"
+	},
+
+	"settings": 
+	{
+		
+	},
+
+	"about": 
+	{
+		"title": "JSDB Admin",
+		"version": "Versão 1.0",
+		"author": "Autor: Paulo Lima <paulo.lima@techfullit.com>"
+	}
+}

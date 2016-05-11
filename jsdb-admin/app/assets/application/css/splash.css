@@ -1,0 +1,16 @@
+body{
+	
+	background: #303030;
+	color: white;
+	font-size: small;
+}
+
+a{
+	color: #ddd;
+	text-decoration: none;
+}
+
+#wrapper{
+	
+	background: #363636;
+}

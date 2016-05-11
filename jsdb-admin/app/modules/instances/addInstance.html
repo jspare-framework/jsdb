@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+	<div class="panel-heading">{{ i18n.addConnection }}</div>
+	<div class="panel-body">
+
+		<form role="form">
+			<div class="form-group">
+				<label>{{ i18n.name }}</label> <input id="name" class="form-control" value="Conexão Local" placeholder="Conexão Loca" required>
+				<!-- <p class="help-block"></p> -->
+			</div>
+			<div class="form-group">
+				<label>{{ i18n.host }}</label> <input id="host" class="form-control" value="http://127.0.0.1" placeholder="http://127.0.0.1" required>
+				<!-- <p class="help-block"></p> -->
+			</div>
+			<div class="form-group">
+				<label>{{ i18n.port }}</label> <input id="port" class="form-control" value="5732" placeholder="5732"  required>
+			</div>
+			<div class="form-group">
+				<label>{{ i18n.instance }}</label> <input id="instance" class="form-control" value="public" placeholder="public" required>
+			</div>
+			<div class="form-group">
+				<label>{{ i18n.credential }}</label> <input id="credential" class="form-control" required>
+			</div>
+
+			<div class="actions">
+				
+				<button type="submit" id="cmd_add_connection" class="btn btn-primary pull-right">{{ i18n.add }}</button>
+				<button type="button" id="cmd_test_connection" class="btn btn-info pull-right">{{ i18n.tryConnection }}</button>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,114 @@
+{
+	"ENX000": 
+	{
+		"message": "Unexpected error"
+	},
+	
+	"SRVPKNF" : {
+		"message" : "Private key not found."
+	},
+	
+	"SRVCERNF" : {
+		"message" : "Certificate not found."
+	},
+
+	"TRXFBD": 
+	{
+		"message": "Transaction forbidden"
+	},
+
+	"TRXNTA": 
+	{
+		"message": "Transaction not authorized"
+	},
+
+	"TRXNFD": 
+	{
+		"message": "Transaction not found"
+	},
+
+	"TRXINV": 
+	{
+		"message": "Invalid request data"
+	},
+
+	"INSTALR": 
+	{
+		"message": "Instance already exist on database."
+	},
+
+	"INSTFAL": 
+	{
+		"message": "Fail on add instance"
+	},
+
+	"INSTNFD": 
+	{
+		"message": "Instance not found on database"
+	},
+
+	"DMNALR": 
+	{
+		"message": "Domain already exist on instance."
+	},
+
+	"DMNFAL": 
+	{
+		"message": "Fail on add domain"
+	},
+
+	"DMNNFD": 
+	{
+		"message": "Domain not found on instance"
+	},
+
+	"KEYNFD": 
+	{
+		"message": "Key not found on domain"
+	},
+
+	"MKYNFD": 
+	{
+		"message": "Master Key not found on database, please verify your JSDB installation."
+	},
+
+	"SCYNFD": 
+	{
+		"message": "Security credentials not found on database, please verify your JSDB installation."
+	},
+
+	"SCYROT": 
+	{
+		"message": "Cannot modify root user."
+	},
+
+	"SCYUNF": 
+	{
+		"message": "User key not found."
+	},
+
+	"SCYRDEL": 
+	{
+		"message": "Cannot delete root user."
+	},
+
+	"EIO666": 
+	{
+		"message": "Database inconsistent, check with your database admin."
+	},
+
+	"INSTNINFO": 
+	{
+		"message": "Instance not informed"
+	},
+
+	"DMNNINFO": 
+	{
+		"message": "Domain not informed"
+	},
+
+	"EIONTF": 
+	{
+		"message": "File not found."
+	}
+}

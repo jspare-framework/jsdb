@@ -1,0 +1,121 @@
+{
+	"status" : 
+	{
+		"method" : "GET",
+		"url": "/environment/status"
+	},
+
+	"stop": 
+	{
+		"method": "POST",
+		"url": "/environment/stop"
+	},
+
+	"addUser": 
+	{
+		"method": "POST",
+		"url": "/security/user/add"
+	},
+
+	"removeUser": 
+	{
+		"method": "POST",
+		"url": "/security/user/:user/remove"
+	},
+
+	"getUser": 
+	{
+		"method": "GET",
+		"url": "/security/user/:user"
+	},
+
+	"listUsers": 
+	{
+		"method": "GET",
+		"url": "/security/users"
+	},
+
+	"addInstance": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/add"
+	},
+
+	"removeInstance": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/remove"
+	},
+
+	"listInstances": 
+	{
+		"method": "GET",
+		"url": "/instance/list"
+	},
+
+	"addDomain": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/domain/:domain/add"
+	},
+
+	"removeDomain": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/domain/:domain/remove"
+	},
+
+	"listDomains": 
+	{
+		"method": "GET",
+		"url": "/instance/:instance/domain/list"
+	},
+	
+	"instanceStatus": 
+	{
+		"method": "GET",
+		"url": "/instance/:instance/status"
+	},
+
+	"persist": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/domain/:domain/data/persist"
+	},
+
+	"persistBatch": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/domain/:domain/data/persistBatch"
+	},
+
+	"remove": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/domain/:domain/data/remove"
+	},
+
+	"queryFor": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/domain/:domain/data/query"
+	},
+
+	"count": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/domain/:domain/data/count"
+	},
+	
+	"size": 
+	{
+		"method": "GET",
+		"url": "/instance/:instance/domain/:domain/data/size"
+	},
+	
+	"query": 
+	{
+		"method": "POST",
+		"url": "/instance/:instance/query"
+	}
+}

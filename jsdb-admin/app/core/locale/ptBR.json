@@ -1,0 +1,47 @@
+{
+	"locale": "Português (BR)",
+	"title": "JSDB ADMIN",
+	"menu": 
+	{
+		"file": "Arquivo",
+		"config": "Configurações",
+		"exit": "Sair",
+		"help": "Ajuda",
+		"docs": "Documentação",
+		"documentationUrl" : "http://jspare.org/jsdb/docs/last",
+		"about": "Sobre"
+	},
+
+	"window": 
+	{
+		"alert": 
+		{
+			"error": "Ocorreu um erro, código [{0}]"
+		},
+		"apply" : "Aplicar",
+		"reset": "Reiniciar",
+		"exit": "Deseja realmente sair do JSDB Admin?",
+		"ok" : "Ok"
+	},
+
+	"settings": 
+	{
+		"title" : "Configurações",
+		"general": "Geral",
+		"locale": "Linguagem",
+		
+		"window": "Janela",
+		"maximizedOnLoad" : "Maximizar janela ao iniciar software",
+		"fracs" : "Habilitar preview da janela de conteúdo",
+		"showErrors" : "Informar erros da aplicação",
+		
+		"applied" : "Configurações salvas com sucesso, reinicie o programa para aplicar."
+	},
+
+	"about": 
+	{
+		"title": "JSDB Admin",
+		"version": "Versão 1.0",
+		"author": "Autor: Paulo Lima <paulo.lima@techfullit.com>"
+	}
+}

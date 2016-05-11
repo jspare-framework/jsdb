@@ -1,0 +1,17 @@
+{
+	"shortcuts": 
+	{
+		"commands": 
+		{
+			"close": "forseClose();",
+			"reset": "location.reload();"
+		},
+
+		"keys": 
+		{
+			"devTools": "Ctrl+Shift+X",
+			"shell": "Ctrl+Alt+X",
+			"reset": "F5"
+		}
+	}
+}

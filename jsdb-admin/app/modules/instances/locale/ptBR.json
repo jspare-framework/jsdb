@@ -1,0 +1,23 @@
+{
+	"title" : "Instâncias",
+	"addConnection" : "Adicionar Conexão",
+	"refresh" : "Atualizar",
+	"name" : "Nome",
+	"host" : "Host",
+	"port" : "Porta",
+	"instance" : "Instância",
+	"credential" : "Credêncial",
+	"tryConnection" : "Testar conexão" ,
+	"add" : "Adicionar",
+	"connSuccess" : "Conexão ok",
+	"connFail" : "Falha na conexão",
+	"connAddSuccess" : "Conexão adicionada com sucesso.",
+	"invalidName" : "O nome desta conexão não pode ser vazio",
+	"invalidCredential" : "Credenciais inválidas",
+	
+	
+	"status" : "Status",
+	"domainList" : "{0} - Dominios",
+	"accessDomain" : "Acessar dominio"
+	
+} 

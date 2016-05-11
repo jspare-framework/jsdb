@@ -1,0 +1,51 @@
+{
+	"name": "jsdb-nc",
+	"version": "1.0.0",
+	"main": "./index.js",
+	"description": "JSpareDB CLI",
+	"author": "Paulo Lima <pflima92@gmail.com> (http://jspare.org)",
+	"homepage": "http://jspare.org/jsdb",
+	"directories": 
+	{
+		"example": "example",
+		"test": "test"
+	},
+
+	"scripts": 
+	{
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+
+	"license": "Apache-2",
+	"repository": 
+	{
+		"type": "git",
+		"url": "https://github.com/jspare-framework/jsdb"
+	},
+
+	"bugs": 
+	{
+		"url": "https://github.com/jspare-framework/jsdb/issues"
+	},
+
+	"keywords": 
+	[
+		"JSpare",
+		"JSDB",
+		"JSDB-NC",
+		"NoSQL",
+		"Node Client"
+	],
+
+	"dependencies": 
+	{
+		"underscore": "=1.8.3",
+		"app-root-path": "1.0.0",
+		"string-argv": "0.0.2"
+	},
+
+	"devDependencies": 
+	{
+		"nodeunit ": ">=0.9.1"
+	}
+}

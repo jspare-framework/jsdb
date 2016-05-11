@@ -1,0 +1,7 @@
+{
+	"modules": 
+	[
+		"instances/instances.js",
+		"backup/backup.js"
+	]
+}
