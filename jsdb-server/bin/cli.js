@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const /*--- Declaring imports ---*/
 	
 	_ = require('underscore'),
