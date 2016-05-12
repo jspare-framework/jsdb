@@ -1,14 +1,19 @@
 {
-	"name": "jsdb-nc",
+	"name": "jsdb-cli",
 	"version": "1.0.0",
 	"main": "./index.js",
-	"description": "JSpareDB CLI",
+	"description": "JSDB CLI",
 	"author": "Paulo Lima <pflima92@gmail.com> (http://jspare.org)",
 	"homepage": "http://jspare.org/jsdb",
 	"directories": 
 	{
 		"example": "example",
 		"test": "test"
+	},
+	
+	"bin": 
+	{
+		"jsdb-cli": "./bin/cli.js"
 	},
 
 	"scripts": 

@@ -62,9 +62,7 @@ const /* Declaring imports */
 
 				"cluster": 
 				{
-					"enable": false,
-					"maxPersistFile": "5mb",
-					"maxAllocSize": "512mb"
+					"enable": false
 				}
 			},
 			"entitlements": 
