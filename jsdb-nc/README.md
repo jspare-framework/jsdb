@@ -1,24 +1,20 @@
-Node.js - org.jspare.jsdb.server
-================
+# jsdb-nc
 
+Make the simple, simple
 
-Why?
-----
+JSDB is a simple and minimalist NoSQL database writed with node.
 
+The jsdb-nc represent the node client of jsdb.
 
-Installation
-------------
+## Installation
 
-    
+```sh
+$ npm install jsdb-nc
+```
+## Documentation
 
+For see full documentation access oficial website: [http://jspare.org/jsdb](http://jspare.org/jsdb)
 
-License
--------
+## License
 
-
-Copyright 2016
-
-
-
-
-
+[MIT](LICENSE)
