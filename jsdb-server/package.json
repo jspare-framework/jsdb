@@ -1,7 +1,7 @@
 {
 	"name": "jsdb-server",
 	"description": "JSDB Written using Chrome's V8, implemented in Node.js. Having as its main objectives to be: simple, minimalist and effective for data persistence. In addition to easy integration with other programming languages.",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"main": "./index.js",
 	"author": "Paulo Lima <pflima92@gmail.com> (http://jspare.org)",
 	"homepage": "http://jspare.org/framework",
