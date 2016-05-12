@@ -1,6 +1,6 @@
 {
 	"name": "jsdb-cli",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"main": "./index.js",
 	"description": "JSDB CLI",
 	"author": "Paulo Lima <pflima92@gmail.com> (http://jspare.org)",
@@ -18,7 +18,9 @@
 
 	"scripts": 
 	{
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"version": "npm run build && git add -A dist",
+		"postversion": "git push && git push --tags && rm -rf build/temp"
 	},
 
 	"license": "Apache-2",
