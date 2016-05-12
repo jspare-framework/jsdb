@@ -16,8 +16,13 @@ const /* Declaring imports */
 				
 			//Read config.json from root path
 			var dir = _appRoot + _configFile;
-			var content = _io.readSync(dir, false);
 			
+			if(!_io.exist(dir)){
+				
+				return;
+			}
+			
+			var content = _io.readSync(dir, false);
 			try {
 				
 				content = JSON.parse(content);
