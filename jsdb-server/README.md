@@ -1,25 +1,32 @@
 # jsdb
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url]
-[![Test Coverage][coveralls-image]][coveralls-url]
-[![Gratipay][gratipay-image]][gratipay-url]
+Make the simple, simple
 
-Node.js simple nosql database
+JSDB is a simple and minimalist NoSQL database writed with node.
 
-_JSpareDataBase (jsdb) is a simple database written in node.js_, some features:
+Some features:
 
-* Document Orientation
-* Fast
 * Minimalist
-
+* Simple APIs and Rest service
+* Fast
+* Key/Value and Simple Document Orientation
+* Simple Structure of 
+* Router for embeding app with express
  
 ## Installation
 
+## Node global installation
+
 ```sh
-$ npm install jsdb -g
+$ npm install jsdb-server -g
 ```
+## Standalone installation
+
+Access: [Downloads](http://jspare.org/jsdb/downloads)
+
+## Documentation
+
+For see full documentation access oficial website: [http://jspare.org/jsdb](http://jspare.org/jsdb)
 
 ## License
 
