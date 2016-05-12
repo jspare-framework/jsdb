@@ -1,4 +1,4 @@
-const /* Declaring imports */ 
+var /* Declaring imports */ 
 	
 	Jsdbc = require('./connector/Jsdbc'),
 	Credential = require('./models/Credential'),

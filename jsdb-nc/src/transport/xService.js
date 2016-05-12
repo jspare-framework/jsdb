@@ -1,4 +1,4 @@
-const /* Declaring Imports */
+var /* Declaring Imports */
 
 	_ = require('underscore'), 
 	_request = require('request'),

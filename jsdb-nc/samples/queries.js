@@ -1,5 +1,6 @@
-const
-jsdbc = require('./connection');
+"use strict";
+
+const jsdbc = require('./connection');
 
 jsdbc.query("person").call(console.info);
 

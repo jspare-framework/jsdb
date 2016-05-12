@@ -1,6 +1,6 @@
 'use strict';
 
-const /* Declaring Imports */
+var /* Declaring Imports */
 	
 	_ = require('underscore'),
 	_jsonfile = require('jsonfile'),
@@ -43,18 +43,14 @@ const /* Declaring Imports */
 		}
 	};
 
-class Credential {
+function Credential(dataSource, token) {
 	
-	constructor(dataSource, token){
+	if(_.isEmpty(token) && _.isEmpty(dataSource)){
 		
-		if(_.isEmpty(token) && _.isEmpty(dataSource)){
-			
-			throw 'DataSource cannot be null';
-		}
-		
-		this.token = token || _fn.loadDiskCredentials(dataSource);
-		
+		throw 'DataSource cannot be null';
 	}
+	
+	this.token = token || _fn.loadDiskCredentials(dataSource);
 }
 
 module.exports = Credential;
