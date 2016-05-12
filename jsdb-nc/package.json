@@ -1,6 +1,6 @@
 {
 	"name": "jsdb-nc",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"main": "./index.js",
 	"description": "JSDB - JSpare NoSQL Database - Node Client",
 	"author": "Paulo Lima <pflima92@gmail.com> (http://jspare.org)",

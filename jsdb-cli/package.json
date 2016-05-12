@@ -46,7 +46,8 @@
 	{
 		"underscore": "=1.8.3",
 		"app-root-path": "1.0.0",
-		"string-argv": "0.0.2"
+		"string-argv": "0.0.2",
+		"jsdb-nc": "0.0.1"
 	},
 
 	"devDependencies": 
