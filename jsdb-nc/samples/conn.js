@@ -7,7 +7,7 @@ const nc = require('./../src/jsdb-nc'),
 				"port" : 5732,
 				"instance" : "insurance"
 			},
-			"credential" : "ebda5eca59eb0503a99361d3c63f3986"
+			"credential" : "ehdafecas9eb0503a91231dwc63f3s86"
 		};
 
 	var jsdbc = nc.build(CONNECTION, (jsdbc) => {
