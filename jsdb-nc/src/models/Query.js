@@ -1,90 +1,105 @@
 'use strict';
-var _ = require('underscore');
+const _ = require('underscore');
 
-function Query(executor, instance, domain) {
-
-	this.filter = {};
-
-	// For fluent usage on jsdbc directly
-	this.executor = executor;
-	this.instance = instance;
-	this.domain = domain;
-}
-
-Query.prototype.setConditions = function(conditions) {
-
-	this.filter.conditions = conditions;
-	return this;
-}
-
-Query.prototype.condition = function(name, type, value) {
-
-	var condition = _.first(arguments);
-
-	if (arguments.length !== 1) {
-
-		condition = {
-			column : name,
-			conditionType : type,
-			conditionValue : value
-		};
+class Query{
+	
+	constructor(executor, instance, domain){
+		
+		this.filter = {};
+		
+		//For fluent usage on jsdbc directly
+		this.executor = executor;
+		this.instance = instance;
+		this.domain = domain;
 	}
-
-	return this.addCondition(condition);
-}
-
-Query.prototype.addCondition = function(condition) {
-
-	if (!this.filter.conditions) {
-		this.filter.conditions = [];
+	
+	setConditions(conditions){
+		
+		if(_.isEmpty(conditions)) return this;
+		
+		this.filter.conditions = conditions;
+		return this;
 	}
-	this.filter.conditions.push(condition);
-	return this;
-}
-
-Query.prototype.byKey = function(propertie) {
-
-	this.filter.byKey = propertie;
-	return this;
-}
-
-Query.prototype.setFilter = function(filter) {
-
-	this.filter = filter;
-	return this;
-}
-
-Query.prototype.select = function(access) {
-
-	this.filter.select = access;
-	return this;
-}
-
-Query.prototype.extendWhere = function(properties) {
-
-	if (!this.filter.where) {
-		this.filter.where = {};
+	
+	condition(name, type, value){
+		
+		if(_.isEmpty(value) && !_.isBoolean(value)) return this;
+		
+		var condition = _.first(arguments);
+		
+		if(arguments.length !== 1){
+			
+			condition = {
+				column : name,
+				conditionType : type,
+				conditionValue : value
+			};
+		}
+		
+		return this.addCondition(condition);
 	}
-	_.extend(this.filter.where, properties);
-	return this;
-}
-
-Query.prototype.where = function(name, value) {
-
-	if (!this.filter.where) {
-		this.filter.where = {};
+	
+	addCondition(condition){
+		
+		if(!this.filter.conditions){
+			this.filter.conditions = [];
+		}
+		this.filter.conditions.push(condition);
+		return this;
 	}
-	this.filter.where[name] = value;
-	return this;
-}
-
-Query.prototype.call = function(callback) {
-
-	if (!this.executor) {
-
-		throw 'No executor associated to this query object';
+	
+	byKey(propertie){
+		
+		if(_.isEmpty(propertie)) return this;
+		
+		this.filter.byKey = propertie;
+		return this;
 	}
-
-	this.executor.queryFor(this.domain, this, callback, this.instance);
+	
+	setFilter(filter){
+		
+		if(_.isEmpty(filter)) return this;
+		
+		this.filter = filter;
+		return this;
+	}
+	
+	select(access){
+		
+		if(!access) return this;
+		
+		this.filter.select = access;
+		return this;
+	}
+	
+	extendWhere(properties){
+		
+		if(!this.filter.where){
+			this.filter.where = {};
+		}
+		_.extend(this.filter.where, properties);
+		return this;
+	}
+	
+	where(name, value){
+		
+		if(!value) return this;
+		
+		if(!this.filter.where){
+			this.filter.where = {};
+		}
+		this.filter.where[name] = value;
+		return this;
+	}
+	
+	call(callback){
+		
+		if(!this.executor){
+			
+			throw 'No executor associated to this query object';
+		}
+		
+		this.executor.queryFor(this.domain, this, callback, this.instance);
+	}
 }
 module.exports = Query;

@@ -90,7 +90,7 @@ module.exports = {
 		}
 
 		//Start execution of transaction
-		console.tag(transaction.getId()).tag(transaction.getTransaction()).tag(transaction.getUserToken()).audit('received transaction');
+		console.debug(transaction.getId()).tag(transaction.getTransaction()).tag(transaction.getUserToken()).audit('received transaction');
 		try {
 			
 			//Get fulfillment
