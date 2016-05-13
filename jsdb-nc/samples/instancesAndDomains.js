@@ -1,5 +1,5 @@
 "use strict";
-const jsdbc = require('./connection');
+const jsdbc = require('./conn');
 
 jsdbc.addInstance((err, res)=> {
 

@@ -1,5 +1,5 @@
 "use strict";
-const jsdbc = require('./connection');
+const jsdbc = require('./conn');
 
 var user = {
 	"name" : "Username",
