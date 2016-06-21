@@ -3,13 +3,15 @@
 	{
 		"message": "Unexpected error"
 	},
-	
-	"SRVPKNF" : {
-		"message" : "Private key not found."
+
+	"SRVPKNF": 
+	{
+		"message": "Private key not found."
 	},
-	
-	"SRVCERNF" : {
-		"message" : "Certificate not found."
+
+	"SRVCERNF": 
+	{
+		"message": "Certificate not found."
 	},
 
 	"TRXFBD": 
@@ -69,7 +71,12 @@
 
 	"MKYNFD": 
 	{
-		"message": "Master Key not found on database, please verify your JSDB installation."
+		"message": "Master Key not found on database, please verify your jsdb installation. Try run command jsdb install."
+	},
+
+	"MKYDIF": 
+	{
+		"message" : "Your master key was generated in another version that already installed jsdb. Try run command jsdb migration to update your metadata."	
 	},
 
 	"SCYNFD": 

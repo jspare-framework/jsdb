@@ -6,6 +6,8 @@ const /*--- Declaring imports ---*/
 module.exports = {
 
 	DEFAULT_DATE_PATTERN : 'YYYY-MM-DDTHH:mm:ss.SSS',
+	
+	SPACE : ' ',
 
 	getSystemUsername : function(){
 		

@@ -8,8 +8,6 @@ const /*--- Declaring imports ---*/
 	_holder = require('./../storage/holder'),
 	_path = require('./../storage/path');
 
-var console = process.console || global.console;
-
 module.exports = {
 
 	roles : [ 'grantAll', 'grantMngDomain', 'grantPersist',

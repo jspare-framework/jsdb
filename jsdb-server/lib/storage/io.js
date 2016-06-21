@@ -2,9 +2,8 @@ const /*--- Declaring imports ---*/
 	_ = require('underscore'),
 	_fs = require('fs'),
 	_mkdirp = require('mkdirp'),
-	_error = require('./../application/error');
-
-var console = process.console || global.console;
+	_error = require('./../application/error'),
+	_logger = require('./../application/logger');
 
 module.exports = {
 
@@ -79,8 +78,8 @@ module.exports = {
 			return data;
 		} catch (e) {
 			if (e.code !== 'ENOENT') {
-				console.error('error on %s', dir);
-				console.error('STORAGE.js read ---FIXME---')
+				_logger.error('error on %s', dir);
+				_logger.error('STORAGE.js read ---FIXME---')
 				// TODO LIST FIXME Vulnerable point
 				throw new _error.EnvironmentError('EIO666');
 			}
@@ -100,7 +99,7 @@ module.exports = {
 			
 			if(err){
 				if (err.code !== 'ENOENT') {
-					console.error('error on %s', dir);
+					_logger.error('error on %s', dir);
 					callback(new _error.EnvironmentError('EIO666'));
 					return;
 				}

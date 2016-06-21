@@ -15,7 +15,7 @@ module.exports = {
 		var headers = {
 			'User-Agent' : 'JSDB-NC/1.0.0',
 			'Content-Type' : 'application/json',
-			'scy-tkn-auth' : credentials
+			'x-auth-token' : credentials
 		};
 		
 		var request = {

@@ -2,6 +2,7 @@ const /*--- Declaring imports ---*/
 	_ = require('underscore'),
 	_os = require('os'),
 	_definitions = require('./../application/definitions'),
+	_logger = require('./../application/logger'),
 	_nodeLibrary = {
 		'win32' : 'node-windows',
 		'darwin' : 'node-mac',
@@ -10,7 +11,7 @@ const /*--- Declaring imports ---*/
 	
 	performUninstallService = function(library){
 	
-		console.log('Uninstalling jsdb on your os');
+		_logger.log('Uninstalling jsdb on your os');
 	
 		var dirname = _definitions['root'];
 	
@@ -25,8 +26,6 @@ const /*--- Declaring imports ---*/
 		//Uninstall the script as a service.
 		svc.uninstall();
 	};
-
-var console = process.console || global.console;
 	
 module.exports = {
 

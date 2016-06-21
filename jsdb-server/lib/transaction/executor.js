@@ -6,10 +6,7 @@ const /*--- Declaring imports ---*/
 		_definitions = require('./../application/definitions'),
 		_error = require('./../application/error'),
 		_errors = require('./../application/errors.json'),
-		_entitlements = require('./entitlements'),
-		_monitoring = require('./../monitoring/monitoring.manager');
-
-var console = process.console || global.console;
+		_entitlements = require('./entitlements');
 
 module.exports = {
 
@@ -24,8 +21,6 @@ module.exports = {
 		 * @param {function} dispatch
 		 * */
 		function callback(err, result, rollback){
-			
-			_monitoring.endTransaction(transaction.getId());
 			
 			if(!_.isUndefined(err)){
 				
@@ -94,10 +89,10 @@ module.exports = {
 		try {
 			
 			//Get fulfillment
-			var fulfillment = './../fulfillment/' + transaction.getTransaction();
+			var worker = './../workers/' + transaction.getTransaction();
 			
 			//Get executor
-			var executor = require(fulfillment);
+			var executor = require(worker);
 			console.tag(transaction.getId()).debug('executor import fulfillment [%s]', transaction.getTransaction());
 			
 			_entitlements.validate(transaction, executor, (err) => {
@@ -114,9 +109,6 @@ module.exports = {
 					dispatch(new Response(_definitions.trxStatus.INVALID, errorData));
 					return;
 				}
-				
-				//Start monitoring
-				_monitoring.registerTransaction(transaction);
 				
 				//Execute transaction
 				executor.execute(transaction, callback);

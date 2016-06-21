@@ -11,7 +11,7 @@ class Transaction{
 		this.creationDate = _utils.now();
 		this.id = _token.generateTid();
 		this.transaction = transaction;
-		this.userToken = req.header('scy-tkn-auth');
+		this.userToken = req.header('x-auth-token');
 		this.context = {};
 	}
 	data(data) {

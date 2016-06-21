@@ -10,8 +10,6 @@ const /*--- Declaring imports ---*/
 	_holder = require('./../storage/holder'),
 	_identity = require('./../storage/identity');
 
-var console = process.console || global.console;
-
 module.exports = {
 
 	roles : [ 'grantAll', 'grantMngDomain', 'grantPersist',
@@ -133,9 +131,6 @@ module.exports = {
 					
 					packages.push(currentPackage.values);
 				}
-				console.debug('existingEntities ' + Object.keys(existingEntities).length);
-				console.debug('newEntities ' + Object.keys(newEntities).length);
-				console.debug('batch ' + packages.length);
 				
 				var domainPhysicalFilesCount = _io.listFiles(_path.buildDomainDataDir(data.instance, data.domain)).length;
 				domainPhysicalFilesCount++;

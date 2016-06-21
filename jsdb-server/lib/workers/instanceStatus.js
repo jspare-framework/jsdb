@@ -1,7 +1,5 @@
 const /* Declaring imports */
 
-	_monitoring = require('./../monitoring/monitoring.manager');
-
 module.exports = {
 
 	roles : [ 'grantAll', 'status' ],
@@ -15,7 +13,7 @@ module.exports = {
 
 		var instance = transaction.getData();
 		
-		var result = _monitoring.getInstanceStatus(instance);
+		var result = {};
 		callback(_.noop(), result);
 	},
 	rollback : function(transaction, error){

@@ -2,6 +2,7 @@ const /* Declaring imports */
 	_ = require('underscore'),
 	_appRoot = require('app-root-path').path,
 	_io = require('./../storage/io')
+	_logger = require('./logger'),
 	_configFile = '/config.json',
 	_fn = {
 		
@@ -28,7 +29,7 @@ const /* Declaring imports */
 				content = JSON.parse(content);
 			} catch (e) {
 
-				console.warn('config: founded config.json, but are invalid format, using default config.');
+				_logger.warn('config: founded config.json, but are invalid format, using default config.');
 				content = {};
 			}
 			
@@ -82,8 +83,6 @@ const /* Declaring imports */
 		};
 
 var _config;
-
-var console = process.console || global.console;
 
 module.exports = {
 

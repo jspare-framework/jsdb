@@ -1,21 +1,11 @@
 const /*--- Declaring imports ---*/
 
 	_ = require('underscore'), 
-	_logger = require('./../modules/logger'),
 	_kernel = require('./../modules/kernel'),
 	_credentials = require('./../modules/credentials'),
+	_logger = require('./logger'),
 	_resources = {
-		logger : {
-			name : 'audit',
-			install : function() {
-				
-				_logger.load();
-			},
-			load : function() {
-				
-				_logger.load();
-			}
-		},
+	
 		kernel : {
 			name : 'kernel',
 			install : function() {
@@ -48,28 +38,26 @@ const /*--- Declaring imports ---*/
 		},
 };
 
-var console = process.console || global.console;
-
 module.exports = {
 		
 	install : function(){
 		
-		console.tag('env').info('initializing resources');
+		_logger.info('initializing resources');
 
 		_.each(_resources, (r) => {
 			
-			console.tag('env').info('loading [%s]', r.name);
+			_logger.info('loading [%s]', r.name);
 			
 			r.install();
 		});
 	},	
 	load : function() {
 		
-		console.tag('env').info('initializing resources');
+		_logger.info('initializing resources');
 
 		_.each(_resources, (r) => {
 			
-			console.tag('env').info('loading [%s]', r.name);
+			_logger.info('loading [%s]', r.name);
 			
 			r.load();
 		});

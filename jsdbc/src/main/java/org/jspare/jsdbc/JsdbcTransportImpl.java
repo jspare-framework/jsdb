@@ -54,7 +54,7 @@ import lombok.extern.slf4j.Slf4j;
 public class JsdbcTransportImpl implements JsdbcTransport {
 
 	/** The Constant AUTHENTICATION_KEY. */
-	private static final String AUTHENTICATION_KEY = "scy-tkn-auth";
+	private static final String AUTHENTICATION_KEY = "x-auth-token";
 	
 	/** The Constant AGENT_KEY. */
 	private static final String AGENT_KEY = "User-Agent";

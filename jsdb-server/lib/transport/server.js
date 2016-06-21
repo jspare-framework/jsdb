@@ -6,7 +6,9 @@ const /*--- Declaring imports ---*/
 	_express = require('express'),
 	_expressCompress = require('compression'),
 	_bodyParser = require('body-parser'),
+	_cors = require('cors'),
 	_config = require('./../application/config'),
+	_logger = require('./../application/logger')
 	_io = require('./../storage/io'),
 	_appRoot = require('app-root-path').path,
 	_handlers = require( './handlers'),
@@ -30,6 +32,19 @@ const /*--- Declaring imports ---*/
 			
 			var mappings = _fn.getMappings();
 			
+			var jsdb = function (req, res, next) {
+				  res.header('x-powered-by', 'JSDB');
+				  next();
+			};
+			
+			_fn.engine.use(_cors());
+			_fn.engine.options('*', _cors());
+			
+			_fn.engine.use(_bodyParser.json(
+					{ 'limit' : serverConfig.maxPersistSize }
+			));
+			_fn.engine.use(_expressCompress());
+			
 			_.each(_resources, function(r){
 				
 				if(r.middleware){
@@ -39,16 +54,6 @@ const /*--- Declaring imports ---*/
 				}
 				_fn.engine.use(r.path,r.doIt(r.context));
 			});
-			
-			_fn.engine.use(_bodyParser.json(
-					{ 'limit' : serverConfig.maxPersistSize }
-			));
-			_fn.engine.use(_expressCompress());
-			
-			var jsdb = function (req, res, next) {
-				  res.header('x-powered-by', 'JSDB');
-				  next();
-			};
 		
 			_fn.engine.param('instance', function(req, res, next, instance) {
 
@@ -113,7 +118,7 @@ module.exports = {
 		
 		if(serverConfig.security.enable){
 			
-			console.tag('server').info('https enabled');
+			_logger.info('https enabled');
 			
 			var privateKeyPath = _appRoot + serverConfig.security.privateKey;
 			var certificatePath = _appRoot + serverConfig.security.certificate;
@@ -122,13 +127,13 @@ module.exports = {
 			if(_.isEmpty(serverConfig.security.privateKey) || !_io.exist(privateKeyPath)){
 				
 				var ex = new _error.EnvironmentError('SRVPKNF');
-				console.error('error Code: [%s] message: [%s]', ex.name, ex.message);
+				_logger.error('error Code: [%s] message: [%s]', ex.name, ex.message);
 				process.exit(1);
 			}
 			if(_.isEmpty(serverConfig.security.certificate) || !_io.exist(certificatePath)){
 				
 				var ex = new _error.EnvironmentError('SRVCERNF');
-				console.error('error Code: [%s] message: [%s]', ex.name, ex.message);
+				_logger.error('error Code: [%s] message: [%s]', ex.name, ex.message);
 				process.exit(1);
 			}
 			
@@ -144,7 +149,7 @@ module.exports = {
 		//Work with cluster option XXX BETA - Will be improved
 		if(serverConfig.cluster.enable){
 			
-			console.tag('server').info('cluster enabled');
+			_logger.info('cluster enabled');
 			
 			var cluster = require('cluster');
 			
@@ -160,15 +165,15 @@ module.exports = {
 				//TODO Check cluster listener
 				_app = _app.listen(serverConfig.port, () => {
 
-					console.tag('server').info('server [%s] - started on port [%s]', _config.get('name'), serverConfig.port);
+					_logger.info('server [%s] - started on port [%s]', _config.get('name'), serverConfig.port);
 				});
-				console.tag('server').info('server [%s] - started on port [%s] cluster [%s]', _config.get('name'), serverConfig.port, cluster.worker.id);
+				_logger.info('server [%s] - started on port [%s] cluster [%s]', _config.get('name'), serverConfig.port, cluster.worker.id);
 			}
 			
 			// Listen for dying workers
 			cluster.on('exit', (worker) => {
 
-				console.tag('server').info('lost cluster %d ', worker.id);
+				_logger.info('lost cluster %d ', worker.id);
 			    cluster.fork();
 			});
 			return;
@@ -176,7 +181,7 @@ module.exports = {
 		
 		_app = _app.listen(serverConfig.port, () => {
 			
-			console.tag('server').info('server [%s] - started on port [%s]', _config.get('name'), serverConfig.port);
+			_logger.info('server [%s] - started on port [%s]', _config.get('name'), serverConfig.port);
 		});
 	},
 	
@@ -184,7 +189,7 @@ module.exports = {
 		
 		if(_app != null){
 			
-			console.tag('server').info('server [%s] - will be stoped', _config.get('name'));
+			_logger.info('server [%s] - will be stoped', _config.get('name'));
 			
 			_app.close();
 		}

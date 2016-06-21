@@ -3,6 +3,7 @@ const /*--- Declaring imports ---*/
 	_ = require('underscore'),
 	_osenv = require('osenv'),
 	_error = require('./../application/error'),
+	_logger = require('./../application/logger'),
 	_path = require('./../storage/path'),
 	_io = require('./../storage/io'),
 	_holder = require('./../storage/holder'),
@@ -13,8 +14,6 @@ const /*--- Declaring imports ---*/
 	DEFAULT_CREDENTIALS_PATH = '/.jsdb/',
 	DEFAULT_CREDENTIALS_FILE = 'credentials';
 	
-var console = process.console || global.console;
-
 module.exports = {
 		
 	load : function(){
@@ -24,7 +23,7 @@ module.exports = {
 			if(err || _.isNull(credentialsData) || _.isUndefined(credentialsData) || _.isEmpty(credentialsData)){
 				
 				var ex = new _error.EnvironmentError('ESCY01');
-				console.error('error Code: [%s] message: [%s]', ex.name, ex.message);
+				_logger.error('error Code: [%s] message: [%s]', ex.name, ex.message);
 				process.exit(1);
 			}
 		});
@@ -32,7 +31,7 @@ module.exports = {
 	
 	install : function(){
 
-		console.tag('jsdb').info('installing credentials');
+		_logger.info('installing credentials');
 		
 		_io.load(_path.buildCredentialsDir());
 
@@ -40,7 +39,7 @@ module.exports = {
 			 
 			 if(_.isEmpty(data)){
 	
-					console.tag('jsdb').info('JSDB: generating your root token');
+					_logger.info('JSDB: generating your root token');
 					
 					var root = {
 						'token' : _token.generateToken(),
@@ -71,10 +70,10 @@ module.exports = {
 					}
 					_io.storeSync(credentialsPath, JSON.stringify(credentials, null, 4));
 					
-					console.tag('jsdb').info('It is important that this key is not lost, it is the main key to your databas.');
-					console.tag('jsdb').info('Root token generated: [%s]', root.token);
+					_logger.info('It is important that this key is not lost, it is the main key to your databas.');
+					_logger.info('Root token generated: [%s]', root.token);
 				}else{
-					console.tag('jsdb').warn('credentials already installed');
+					_logger.warn('credentials already installed');
 				}
 		 });
 	}

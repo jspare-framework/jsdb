@@ -1,6 +1,7 @@
 const /*--- Declaring imports ---*/
 	_ = require('underscore'),
 	_env = require('./../application/environment'),
+	_logger = require('./../application/logger'),
 	_os = require('os'),
 	_definitions = require('./../application/definitions'),
 	_nodeLibrary = {
@@ -18,7 +19,7 @@ const /*--- Declaring imports ---*/
 		
 		installService : function(library){
 			
-			console.log('install: installing JSDB Service on your operation system');
+			_logger.log('install: installing JSDB Service on your operation system');
 		
 			var	dirname = _definitions['root'],
 				Service = require(library).Service;
@@ -34,19 +35,19 @@ const /*--- Declaring imports ---*/
 			// process is available as a service.
 			svc.on('install',function(){
 				
-			  console.log('install: service installed');
+			  _logger.log('install: service installed');
 			  svc.start();
 			});
 			
 			svc.on('error',function(){
 				
-			  console.error('install: error on install service');
+			  _logger.error('install: error on install service');
 			});
 		
 			// Listen for the 'start' event and let us know when the
 			// process has actually started working.
 			svc.on('start',function(){
-			  console.log('install: %s started', svc.name);
+			  _logger.log('install: %s started', svc.name);
 			});
 		
 			// Install the script as a service.
@@ -54,13 +55,11 @@ const /*--- Declaring imports ---*/
 		}
 	};
 
-var console = process.console || global.console;
-
 module.exports = {
 		
 	execute : function(installService){
 		
-		console.tag('jsdb').info('install Process');
+		_logger.info('install Process');
 		
 		_install.loader();
 		
@@ -70,10 +69,10 @@ module.exports = {
 			throw 'JSDB not available for install service on your platform: ' +_os.platform();
 		}
 		
-		console.tag('jsdb').info('environment prepared');
+		_logger.info('environment prepared');
 		
 		if(!installService){
-			console.tag('jsdb').warn('skip install service');
+			_logger.warn('skip install service');
 			return;
 		}
 		_install.installService(library);

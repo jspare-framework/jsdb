@@ -88,8 +88,6 @@ const /*--- Declaring imports ---*/
 		}
 };
 
-var console = process.console || global.console;
-
 var _HOLDER_ = {
 
 	storage : new _collections.TimedHeap(),
